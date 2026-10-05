@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>取扱商品｜白藍紙業株式会社</title>
+<meta name="description" content="トイレットペーパー、ティッシュ、キッチンペーパー、ペーパータオル、業務用ジャンボロール、衛生・日用品の取扱商品。規格・入数・ケース寸法を掲載しています。">
+<meta name="theme-color" content="#1d3a6b">
+<meta name="robots" content="noindex, nofollow"><!-- サンプル公開中は検索に載せない。本番では削除 -->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Barlow+Condensed:wght@500;600&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js" defer></script>
+<script src="js/products-data.js" defer></script>
+<script src="js/layout.js" defer></script>
+<script src="js/products.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<header class="site-header" id="site-header" data-page="products" data-title="取扱商品"></header>
+
+<main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <nav aria-label="現在地">
+        <ol class="breadcrumb"><li><a href="index.html">トップ</a></li><li aria-current="page">取扱商品</li></ol>
+      </nav>
+      <h1>取扱商品</h1>
+      <p>家庭紙と衛生用品の代表的な商品を掲載しています。規格・入数・ケース寸法を確認でき、気になる商品はそのままお問い合わせいただけます。</p>
+    </div>
+  </div>
+
+  <section class="wrap catalog" id="catalog" aria-label="商品カタログ">
+    <p class="catalog-note"><strong>価格について</strong>　価格は数量・配送頻度・納品先によって異なるため掲載していません。お見積りは無料です。掲載していない商品もお取り寄せできます。</p>
+
+    <div class="catalog-tools">
+      <div class="cat-tabs" data-tabs role="group" aria-label="カテゴリで絞り込む"></div>
+      <div class="tool-row">
+        <div class="tool-field tool-search">
+          <label for="catalog-q">キーワードで探す</label>
+          <input class="input" type="search" id="catalog-q" placeholder="例：芯なし、再生紙、ダブル" autocomplete="off">
+        </div>
+        <div class="tool-field tool-use">
+          <label for="catalog-use">用途で絞り込む</label>
+          <select class="input" id="catalog-use"></select>
+        </div>
+        <p class="result-count" data-count aria-live="polite"></p>
+      </div>
+    </div>
+
+    <ul class="product-grid" data-grid></ul>
+
+    <div class="catalog-empty" data-empty hidden>
+      <p>条件に合う商品が見つかりませんでした。掲載していない商品も、お取り寄せできる場合があります。</p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost" data-reset>条件をクリアする</button>
+        <a class="btn btn-primary" href="contact.html">商品について問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" data-render="cta" aria-label="お問い合わせのご案内"></section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<dialog class="product-dialog" id="product-dialog" aria-labelledby="dialog-title">
+  <button type="button" class="dialog-close" data-close aria-label="閉じる">×</button>
+  <div data-dialog-body></div>
+</dialog>
+</body>
+</html>

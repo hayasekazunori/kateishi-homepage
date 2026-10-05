@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>お問い合わせ・お見積り｜白藍紙業株式会社</title>
+<meta name="description" content="見積・サンプルのご依頼、新規お取引のご相談はこちらから。お電話・FAXでも承ります。">
+<meta name="theme-color" content="#1d3a6b">
+<meta name="robots" content="noindex, nofollow"><!-- サンプル公開中は検索に載せない。本番では削除 -->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Barlow+Condensed:wght@500;600&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js" defer></script>
+<script src="js/products-data.js" defer></script>
+<script src="js/layout.js" defer></script>
+<script src="js/contact.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<header class="site-header" id="site-header" data-page="contact" data-title="お問い合わせ・お見積り"></header>
+
+<main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <nav aria-label="現在地">
+        <ol class="breadcrumb"><li><a href="index.html">トップ</a></li><li aria-current="page">お問い合わせ</li></ol>
+      </nav>
+      <h1>お問い合わせ・お見積り</h1>
+      <p>見積・サンプルのご依頼や、新規お取引のご相談はこちらのフォームからどうぞ。<span data-site="form.replyWithin"></span>に担当者からご連絡します。</p>
+    </div>
+  </div>
+
+  <div class="wrap contact-layout">
+    <div class="form-area" id="form-area">
+      <ol class="form-steps" aria-label="お問い合わせの手順">
+        <li data-step="input" class="is-current" aria-current="step">入力</li>
+        <li data-step="confirm">確認</li>
+        <li data-step="done">送信完了</li>
+      </ol>
+
+      <!-- 1. 入力 -->
+      <form class="form-card" id="contact-form" novalidate>
+        <h2 tabindex="-1" data-step-heading>お問い合わせ内容の入力</h2>
+        <p class="form-lead"><span class="req">必須</span> の項目は必ずご入力ください。</p>
+        <p class="prefill-note" id="prefill-note" hidden></p>
+        <p class="form-summary" id="form-summary" role="alert" hidden></p>
+
+        <fieldset class="field">
+          <legend>お問い合わせの種類 <span class="req">必須</span></legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="type" value="見積のご依頼" aria-describedby="e-type">見積のご依頼</label>
+            <label class="choice"><input type="radio" name="type" value="サンプルのご請求" aria-describedby="e-type">サンプルのご請求</label>
+            <label class="choice"><input type="radio" name="type" value="新規お取引のご相談" aria-describedby="e-type">新規お取引のご相談</label>
+            <label class="choice"><input type="radio" name="type" value="商品について" aria-describedby="e-type">商品について</label>
+            <label class="choice"><input type="radio" name="type" value="その他" aria-describedby="e-type">その他</label>
+          </div>
+          <p class="field-error" id="e-type" hidden></p>
+        </fieldset>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-company">会社・団体名 <span class="opt">任意</span></label>
+            <input class="input" type="text" id="f-company" name="company" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-department">部署名 <span class="opt">任意</span></label>
+            <input class="input" type="text" id="f-department" name="department">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">お名前 <span class="req">必須</span></label>
+            <input class="input" type="text" id="f-name" name="name" autocomplete="name" aria-required="true" aria-describedby="e-name">
+            <p class="field-error" id="e-name" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-kana">フリガナ <span class="req">必須</span></label>
+            <input class="input" type="text" id="f-kana" name="kana" aria-required="true" aria-describedby="e-kana">
+            <p class="field-error" id="e-kana" hidden></p>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email">メールアドレス <span class="req">必須</span></label>
+            <input class="input" type="email" id="f-email" name="email" autocomplete="email" inputmode="email" aria-required="true" aria-describedby="e-email">
+            <p class="field-error" id="e-email" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-tel">電話番号 <span class="req">必須</span></label>
+            <input class="input" type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="例：052-000-0000" aria-required="true" aria-describedby="e-tel">
+            <p class="field-error" id="e-tel" hidden></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-industry">業種 <span class="opt">任意</span></label>
+          <select class="input" id="f-industry" name="industry">
+            <option value="">選択してください</option>
+            <option>介護施設・病院</option>
+            <option>オフィス・ビル管理</option>
+            <option>清掃・ビルメンテナンス</option>
+            <option>飲食店・ホテル</option>
+            <option>学校・公共施設</option>
+            <option>小売店・ドラッグストア</option>
+            <option>個人</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="field field-zip">
+          <label for="f-zip">郵便番号 <span class="opt" data-sample-badge>サンプル請求時は必須</span></label>
+          <input class="input" type="text" id="f-zip" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="例：460-0000" aria-describedby="e-zip">
+          <p class="field-error" id="e-zip" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-address">ご住所 <span class="opt" data-sample-badge>サンプル請求時は必須</span></label>
+          <input class="input" type="text" id="f-address" name="address" autocomplete="street-address" aria-describedby="h-address e-address">
+          <p class="field-hint" id="h-address">サンプルの送り先になります。建物名・部屋番号までご入力ください。</p>
+          <p class="field-error" id="e-address" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-interest">関心のある商品 <span class="opt">任意</span></label>
+          <input class="input" type="text" id="f-interest" name="interest" placeholder="例：長尺芯なしロール、ペーパータオル 中判" aria-describedby="e-interest">
+          <p class="field-error" id="e-interest" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-volume">月間ご使用量の目安 <span class="opt">任意</span></label>
+          <input class="input" type="text" id="f-volume" name="volume" placeholder="例：トイレットペーパー 月10ケースほど" aria-describedby="e-volume">
+          <p class="field-error" id="e-volume" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-message">お問い合わせ内容 <span class="req">必須</span></label>
+          <textarea class="input" id="f-message" name="message" rows="6" aria-required="true" aria-describedby="h-message e-message"></textarea>
+          <p class="field-hint" id="h-message">現在お使いの商品、納品場所、ご希望の配送頻度などをお書きいただくと、ご提案がスムーズです。</p>
+          <p class="field-error" id="e-message" hidden></p>
+        </div>
+
+        <div class="trap" aria-hidden="true">
+          <label for="f-gotcha">この欄は空のままにしてください</label>
+          <input type="text" id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="agree-wrap">
+          <label class="agree" for="f-agree">
+            <input type="checkbox" id="f-agree" name="agree" value="同意する" aria-describedby="e-agree">
+            <span><a href="privacy.html" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します <span class="req">必須</span></span>
+          </label>
+          <p class="field-error" id="e-agree" hidden></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">入力内容を確認する</button>
+        </div>
+      </form>
+
+      <!-- 2. 確認 -->
+      <section class="form-card" id="confirm-step" hidden aria-labelledby="confirm-title">
+        <h2 id="confirm-title" tabindex="-1" data-step-heading>入力内容の確認</h2>
+        <p class="form-lead">以下の内容で送信します。よろしければ「この内容で送信する」を押してください。</p>
+        <dl class="confirm-list" id="confirm-list"></dl>
+        <p class="send-error" id="send-error" role="alert" hidden></p>
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" id="back-btn">入力画面に戻る</button>
+          <button type="button" class="btn btn-primary" id="send-btn">この内容で送信する</button>
+        </div>
+      </section>
+
+      <!-- 3. 完了 -->
+      <section class="form-card" id="done-step" hidden aria-labelledby="done-title">
+        <h2 id="done-title" tabindex="-1" data-step-heading>
+          <span data-done="real">お問い合わせを受け付けました</span>
+          <span data-done="demo" hidden>デモのため送信していません</span>
+        </h2>
+        <div class="form-done-body" data-done="real">
+          <p>お問い合わせありがとうございます。内容を確認のうえ、<span data-site="form.replyWithin"></span>に担当者からご連絡します。</p>
+          <p>お急ぎの場合は、お電話（<span data-site="tel"></span>）でお問い合わせください。</p>
+        </div>
+        <p class="demo-note" data-done="demo" hidden>このサイトはデモ設定のため、入力内容はどこにも送信されていません。js/config.js の form.endpoint に受付先のURLを設定すると、実際に送信されるようになります。</p>
+        <div class="form-actions">
+          <a class="btn btn-primary" href="index.html">トップページへ戻る</a>
+        </div>
+      </section>
+    </div>
+
+    <aside class="contact-side" aria-label="お電話・FAXでのお問い合わせとよくあるご質問">
+      <div class="side-box">
+        <h2>お電話でのお問い合わせ</h2>
+        <a class="tel-num" data-site-href="tel"><svg class="icon-phone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-site="tel"></span></a>
+        <p>受付時間 <span data-site="hours"></span><br>（<span data-site="holidays"></span>はお休み）</p>
+      </div>
+      <div class="side-box">
+        <h2>FAX・メール</h2>
+        <p>FAX <span data-site="fax"></span>（24時間受付）<br>メール <span data-site="email"></span></p>
+      </div>
+      <div class="side-box faq">
+        <h2>よくあるご質問</h2>
+        <details>
+          <summary>個人でも購入できますか？</summary>
+          <p>個人の方もご購入いただけます。ケース単位でのお届けとなり、お支払いは銀行振込（前払い）または代金引換です。</p>
+        </details>
+        <details>
+          <summary>1ケースだけでも注文できますか？</summary>
+          <p>はい、1ケースから承ります。自社便のエリアでは、複数の商品を1回の配送にまとめてお届けします。</p>
+        </details>
+        <details>
+          <summary>サンプルは無料ですか？</summary>
+          <p>商品のサンプルは無料でお送りします。名入れ品の試作は、内容によって費用がかかる場合があります。</p>
+        </details>
+        <details>
+          <summary>支払い方法を教えてください。</summary>
+          <p>法人様は月末締め・翌月末払いの請求書払いをご利用いただけます。お取引の開始時に審査があります。</p>
+        </details>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
